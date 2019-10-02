@@ -18,3 +18,6 @@ Karl W. Broman & Kara H. Woo (2018), [Data Organization in Spreadsheets](https:/
 The homework is described in the `HW-tidying-cotton-data.html` file (also available as a PDF) in this repository. I recommend working from the html file as opposed to the PDF as the formatting is a bit nicer. You will need to push your code to your GitHub repository, and submit a link to your GitHub repository through the Moodle assignment. 
 
 
+
+
+
