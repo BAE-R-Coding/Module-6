@@ -54,7 +54,6 @@ ncc3 %>%
     geom_point()+
     theme_minimal()+
     theme(axis.text.x = element_text(angle = 90))+
-    labs(title = "Cotton production in NC", caption = "Source: USDA NASS") +
   facet_grid(rows = vars(measurement), cols = vars(ag_district), # facet rows by what type of value is being displayed, cols by                                                                   which ag district 
              scales = "free_y")
 
@@ -68,23 +67,13 @@ ncc3 %>%
 #this will allow us to compute total cotton in lb.
 
 ncc5 <- ncc3 %>%
-  filter(year =="2018") %>%
+  group_by(county) %>% #this was a suggestion I found online but was still given the same error message after running it this way
   spread(key = measurement, value = value)
-# New col names are bulky, rename
-colnames(ncc5)[colnames(ncc5) == "YIELD, MEASURED IN LB / ACRE"] <- "YIELD"
-colnames(ncc5)[colnames(ncc5) == "ACRES HARVESTED"] <- "ACRES"
-total <- ncc5 %>%
-  mutate(total_lbs = ACRES * YIELD )
-#find top 3 producers
-total %>%
-  top_n(3)
-#Top 3 production counties are (1) Halifax (40860800), (2) Martin (25090800), and (3) Northampton (36304400)  
   
   
   
   
-#Trying
-###
+  
 
 
 
